@@ -40,5 +40,6 @@ public final class R {
     public static final class style {
         public static final int ButtonContainer=0x7f060001;
         public static final int ImageTitle=0x7f060000;
+        public static final int light=0x7f060002;
     }
 }
