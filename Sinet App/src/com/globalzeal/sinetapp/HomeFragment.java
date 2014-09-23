@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
 	public interface OnImageSelected{
 		public void onImageClicked(int index);
 	}
-	private static final int SWIPE_MIN_DISTANCE = 120;
+	private static final int SWIPE_MIN_DISTANCE = 100;
 	private static final int SWIPE_THRESHOLD_VELOCITY = 200;
 	private ViewFlipper mViewFlipper;	
 	private AnimationListener mAnimationListener;
@@ -35,6 +35,8 @@ public class HomeFragment extends Fragment {
 	
 	private Activity activity;
 	private OnImageSelected listen;
+	
+	private ImageView siisIMG, confIMG, indIMG,prodIMG,bestPrIMG;
 	
 	@SuppressWarnings("deprecation")
 	private final GestureDetector detector = new GestureDetector(new SwipeGestureDetector());
@@ -60,20 +62,20 @@ public class HomeFragment extends Fragment {
 		 mContext = getActivity();
 		 
 		 mViewFlipper = (ViewFlipper) view.findViewById(R.id.view_flipper);
-			
+		 siisIMG = (ImageView) view.findViewById(R.id.siisIMG);
+		 confIMG = (ImageView) view.findViewById(R.id.confIMG);
+		 indIMG = (ImageView) view.findViewById(R.id.indusIMG);
+		 prodIMG = (ImageView) view.findViewById(R.id.prodIMG);
+		 bestPrIMG = (ImageView) view.findViewById(R.id.bestPrIMG);
 			
 			mViewFlipper.setOnTouchListener(new OnTouchListener() {
 				@Override
 				public boolean onTouch(final View view, final MotionEvent event) {
-					detector.onTouchEvent(event);			
-					
+					detector.onTouchEvent(event);								
 					return true;
 				}
 			});
-			
-			
-			
-			
+												
 			mViewFlipper.setAutoStart(true);
 			mViewFlipper.setFlipInterval(8000);			
 			mViewFlipper.startFlipping();
@@ -92,6 +94,42 @@ public class HomeFragment extends Fragment {
 					//TODO animation stopped event
 				}
 			};
+			
+			
+			siisIMG.setOnClickListener(new View.OnClickListener() {				
+				@Override
+				public void onClick(View v) {
+					listen.onImageClicked(0);					
+				}
+			});
+			
+			confIMG.setOnClickListener(new View.OnClickListener() {				
+				@Override
+				public void onClick(View v) {
+					listen.onImageClicked(1);					
+				}
+			});
+			
+			indIMG.setOnClickListener(new View.OnClickListener() {				
+				@Override
+				public void onClick(View v) {
+					listen.onImageClicked(2);					
+				}
+			});
+			
+			prodIMG.setOnClickListener(new View.OnClickListener() {				
+				@Override
+				public void onClick(View v) {
+					listen.onImageClicked(3);					
+				}
+			});
+			
+			bestPrIMG.setOnClickListener(new View.OnClickListener() {				
+				@Override
+				public void onClick(View v) {
+					listen.onImageClicked(4);					
+				}
+			});
 		return view;
 	}
 	

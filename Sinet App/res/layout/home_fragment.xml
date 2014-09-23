@@ -19,7 +19,7 @@
             android:layout_height="fill_parent" >
 
             <ImageView
-                android:id="@+id/sissIMG"
+                android:id="@+id/siisIMG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"

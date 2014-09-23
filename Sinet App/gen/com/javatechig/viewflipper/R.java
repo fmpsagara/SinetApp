@@ -30,16 +30,21 @@ public final class R {
         public static final int bestPrIMG=0x7f070007;
         public static final int confIMG=0x7f070003;
         public static final int confTXT=0x7f070004;
+        public static final int frame=0x7f070008;
         public static final int indusIMG=0x7f070005;
-        public static final int listFragment=0x7f070008;
         public static final int prodIMG=0x7f070006;
+        public static final int siisIMG=0x7f070001;
         public static final int siisTXT=0x7f070002;
-        public static final int sissIMG=0x7f070001;
         public static final int view_flipper=0x7f070000;
     }
     public static final class layout {
-        public static final int home_fragment=0x7f030000;
-        public static final int main=0x7f030001;
+        public static final int bestpr_fragment=0x7f030000;
+        public static final int conf_fragment=0x7f030001;
+        public static final int home_fragment=0x7f030002;
+        public static final int ind_fragment=0x7f030003;
+        public static final int main=0x7f030004;
+        public static final int prod_fragment=0x7f030005;
+        public static final int siis_fragment=0x7f030006;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
