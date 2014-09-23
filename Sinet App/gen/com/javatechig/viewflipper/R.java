@@ -26,10 +26,12 @@ public final class R {
     }
     public static final class id {
         public static final int lightningIMG=0x7f070001;
+        public static final int listFragment=0x7f070002;
         public static final int view_flipper=0x7f070000;
     }
     public static final class layout {
-        public static final int main=0x7f030000;
+        public static final int home_fragment=0x7f030000;
+        public static final int main=0x7f030001;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
