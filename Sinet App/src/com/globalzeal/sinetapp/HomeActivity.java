@@ -8,6 +8,7 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
@@ -31,45 +32,52 @@ public class HomeActivity extends Activity implements HomeFragment.OnImageSelect
 	private Fragment homeFragment, siisFragment,confFragment,indFragment,prodFragment,bestprFragment;
 	private FragmentTransaction ft;
 	
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		context = this;
-		frameContainer = (FrameLayout) findViewById(R.id.frame);
-		homeFragment = new HomeFragment();
-		siisFragment = new SIISFragment();
-		confFragment = new ConferenceFragment();
-		indFragment = new IndustryFragment();
-		prodFragment = new ProductFragment();
-		bestprFragment = new BestPracticesFragment();
 		
+		if(savedInstanceState==null){
+			frameContainer = (FrameLayout) findViewById(R.id.frame);
+			homeFragment = new HomeFragment();
+									
+			ft = getFragmentManager().beginTransaction();
+			
+			ft.replace(R.id.frame,homeFragment);
+			ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);		
+			ft.commit();
+						
+		}
 		
-		ft = getFragmentManager().beginTransaction();
-		
-		ft.replace(R.id.frame,homeFragment);
-		ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-		ft.addToBackStack(null);
-		ft.commit();
 	}
 		
 	@Override
 	public void onImageClicked(int index) {
 		
-		ft = getFragmentManager().beginTransaction();
+		ft = getFragmentManager().beginTransaction();	
+		
 		if(index==0){
+			siisFragment = new SIISFragment();
 			ft.replace(R.id.frame,siisFragment);		
 		}else if (index==1){
+			confFragment = new ConferenceFragment();
 			ft.replace(R.id.frame,confFragment);
 		}else if (index==2){
+			indFragment = new IndustryFragment();
 			ft.replace(R.id.frame,indFragment);
 		}else if (index==3){
+			prodFragment = new ProductFragment();
 			ft.replace(R.id.frame,prodFragment);
 		}else if (index==4){
+			bestprFragment = new BestPracticesFragment();
 			ft.replace(R.id.frame,bestprFragment);
 		}
+		
 		ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-		ft.addToBackStack(null);
+		
+		ft.addToBackStack(null);		
 		ft.commit();
 	}
 }

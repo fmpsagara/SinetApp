@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment {
 	private Activity activity;
 	private OnImageSelected listen;
 	
-	private ImageView siisIMG, confIMG, indIMG,prodIMG,bestPrIMG;
+	private ImageView siisIMG, confIMG, indIMG,prodIMG,bestPrIMG,confTab,indTab,prodTab,bestPrTab;
 	
 	@SuppressWarnings("deprecation")
 	private final GestureDetector detector = new GestureDetector(new SwipeGestureDetector());
@@ -62,19 +62,16 @@ public class HomeFragment extends Fragment {
 		 mContext = getActivity();
 		 
 		 mViewFlipper = (ViewFlipper) view.findViewById(R.id.view_flipper);
-		 siisIMG = (ImageView) view.findViewById(R.id.siisIMG);
-		 confIMG = (ImageView) view.findViewById(R.id.confIMG);
-		 indIMG = (ImageView) view.findViewById(R.id.indusIMG);
-		 prodIMG = (ImageView) view.findViewById(R.id.prodIMG);
-		 bestPrIMG = (ImageView) view.findViewById(R.id.bestPrIMG);
+		 
+		 confTab = (ImageView) view.findViewById(R.id.conferencesIMGTab);
+		 indTab = (ImageView) view.findViewById(R.id.industryNewsIMGTab);
+		 prodTab = (ImageView) view.findViewById(R.id.productsIMGTab);
+		 bestPrTab = (ImageView) view.findViewById(R.id.bestPracticesIMGTab);
 			
 			mViewFlipper.setOnTouchListener(new OnTouchListener() {
 				@Override
-				public boolean onTouch(final View view, final MotionEvent event) {										
-					
-					
-					detector.onTouchEvent(event);					
-					
+				public boolean onTouch(final View view, final MotionEvent event) {																				
+					detector.onTouchEvent(event);										
 					return true;
 				}
 			});
@@ -82,8 +79,7 @@ public class HomeFragment extends Fragment {
 			mViewFlipper.setAutoStart(true);
 			mViewFlipper.setFlipInterval(8000);			
 			mViewFlipper.startFlipping();
-												
-			
+															
 			//animation listener
 			mAnimationListener = new Animation.AnimationListener() {
 				public void onAnimationStart(Animation animation) {
@@ -98,41 +94,39 @@ public class HomeFragment extends Fragment {
 				}
 			};
 			
-			
-			/*siisIMG.setOnClickListener(new View.OnClickListener() {				
+			confTab.setOnClickListener(new View.OnClickListener() {
+				
 				@Override
 				public void onClick(View v) {
-					listen.onImageClicked(0);					
+					listen.onImageClicked(1);	
+					Toast.makeText(mContext, "CONFERENCE",Toast.LENGTH_SHORT).show();
+				}
+			});
+			indTab.setOnClickListener(new View.OnClickListener() {
+							
+							@Override
+							public void onClick(View v) {
+								listen.onImageClicked(2);
+								Toast.makeText(mContext, "INDUSTRY",Toast.LENGTH_SHORT).show();
+							}
+						});
+			prodTab.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					listen.onImageClicked(3);		
+					Toast.makeText(mContext, "PRODUCTS",Toast.LENGTH_SHORT).show();
+				}
+			});
+			bestPrTab.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					listen.onImageClicked(4);
+					Toast.makeText(mContext, "BEST PRACTICES",Toast.LENGTH_SHORT).show();
 				}
 			});
 			
-			confIMG.setOnClickListener(new View.OnClickListener() {				
-				@Override
-				public void onClick(View v) {
-					listen.onImageClicked(1);					
-				}
-			});
-			
-			indIMG.setOnClickListener(new View.OnClickListener() {				
-				@Override
-				public void onClick(View v) {
-					listen.onImageClicked(2);					
-				}
-			});
-			
-			prodIMG.setOnClickListener(new View.OnClickListener() {				
-				@Override
-				public void onClick(View v) {
-					listen.onImageClicked(3);					
-				}
-			});
-			
-			bestPrIMG.setOnClickListener(new View.OnClickListener() {				
-				@Override
-				public void onClick(View v) {
-					listen.onImageClicked(4);					
-				}
-			});*/
 		return view;
 	}
 	
@@ -166,7 +160,8 @@ public class HomeFragment extends Fragment {
 		@Override
 		public boolean onSingleTapConfirmed(MotionEvent e) {
 			String temp = mViewFlipper.getCurrentView().getTag().toString();
-			listen.onImageClicked(Integer.parseInt(temp));
+			Toast.makeText(mContext, temp, Toast.LENGTH_SHORT).show();
+			//listen.onImageClicked(Integer.parseInt(temp));
 			return super.onSingleTapConfirmed(e);
 		}
 				

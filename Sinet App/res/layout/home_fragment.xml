@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
+    android:paddingTop="10dp"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
     <ViewFlipper
-        android:id="@+id/view_flipper"
-        android:layout_marginTop="50dp"
+        android:id="@+id/view_flipper"        
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_width="fill_parent"
@@ -111,8 +111,7 @@
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-              
+                android:scaleType="centerCrop"              
                 android:src="@drawable/bestpr" />
 
             <TextView
@@ -123,6 +122,81 @@
         </RelativeLayout>
     </ViewFlipper>
 
-
+	<LinearLayout	  
+	      	    
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:layout_marginLeft="20dp"
+	    android:background="#00ffaa"
+	    android:layout_marginRight="20dp"	   
+	    android:orientation="horizontal">
+	    
+	    <RelativeLayout	        
+	        android:layout_width="0dp"
+        	android:layout_height="wrap_content"
+        	android:layout_weight="1.1"	       
+        	android:layout_marginRight="5dp"
+        		 
+        	      
+	        >
+		    <ImageView
+		        android:id="@+id/conferencesIMGTab"
+		        android:layout_height="wrap_content"
+		        android:layout_width="match_parent"	        	        
+		        android:src="@drawable/conferences"></ImageView>
+	    </RelativeLayout>
+	   	 <RelativeLayout
+	        android:layout_width="0dp"
+        	android:layout_height="wrap_content"
+        	android:layout_weight="1.1"
+			android:layout_marginLeft="5dp"
+			android:layout_marginTop="-150dp"
+			  		        	        	
+	        >
+	    <ImageView
+	        android:id="@+id/industryNewsIMGTab"
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent"	        	        
+	        android:src="@drawable/industry_news"></ImageView>
+	    </RelativeLayout>
+	</LinearLayout>
+	
+	<LinearLayout
+	    
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:layout_marginLeft="20dp"
+	    android:layout_marginRight="20dp"	   
+	    android:orientation="horizontal">
+	    
+	    <RelativeLayout	        
+	        android:layout_width="0dp"
+        	android:layout_height="wrap_content"
+        	android:layout_weight="1.1"	       
+        	android:layout_marginRight="5dp" 
+        	android:layout_marginTop="-150dp"	        
+	        >
+		    <ImageView
+		        android:id="@+id/productsIMGTab"
+		        android:layout_height="match_parent"
+		        android:layout_width="match_parent"	        	        
+		        android:src="@drawable/products"></ImageView>
+	    </RelativeLayout>
+	   	 <RelativeLayout
+	        android:layout_width="0dp"
+        	android:layout_height="wrap_content"
+        	android:layout_weight="1.1"
+			android:layout_marginLeft="5dp" 
+			android:layout_marginTop="-150dp"       		        	        	
+	        >
+	    <ImageView
+	            android:id="@+id/bestPracticesIMGTab"
+	        android:layout_height="match_parent"
+	        android:layout_width="match_parent"	        	        
+	        android:src="@drawable/best_practices"></ImageView>
+	    </RelativeLayout>
+	</LinearLayout>
+	
+	
    
-</RelativeLayout>
+</LinearLayout>

@@ -17,22 +17,30 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int bestpr=0x7f020000;
-        public static final int conf=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int ind=0x7f020003;
-        public static final int prod=0x7f020004;
-        public static final int siis=0x7f020005;
-        public static final int swipe_left=0x7f020006;
-        public static final int swipe_right=0x7f020007;
+        public static final int best_practices=0x7f020000;
+        public static final int bestpr=0x7f020001;
+        public static final int conf=0x7f020002;
+        public static final int conferences=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int ind=0x7f020005;
+        public static final int industry_news=0x7f020006;
+        public static final int prod=0x7f020007;
+        public static final int products=0x7f020008;
+        public static final int siis=0x7f020009;
+        public static final int swipe_left=0x7f02000a;
+        public static final int swipe_right=0x7f02000b;
     }
     public static final class id {
         public static final int bestPrIMG=0x7f070007;
+        public static final int bestPracticesIMGTab=0x7f07000b;
         public static final int confIMG=0x7f070003;
         public static final int confTXT=0x7f070004;
-        public static final int frame=0x7f070008;
+        public static final int conferencesIMGTab=0x7f070008;
+        public static final int frame=0x7f07000c;
         public static final int indusIMG=0x7f070005;
+        public static final int industryNewsIMGTab=0x7f070009;
         public static final int prodIMG=0x7f070006;
+        public static final int productsIMGTab=0x7f07000a;
         public static final int siisIMG=0x7f070001;
         public static final int siisTXT=0x7f070002;
         public static final int view_flipper=0x7f070000;
