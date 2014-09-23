@@ -70,8 +70,11 @@ public class HomeFragment extends Fragment {
 			
 			mViewFlipper.setOnTouchListener(new OnTouchListener() {
 				@Override
-				public boolean onTouch(final View view, final MotionEvent event) {
-					detector.onTouchEvent(event);								
+				public boolean onTouch(final View view, final MotionEvent event) {										
+					
+					
+					detector.onTouchEvent(event);					
+					
 					return true;
 				}
 			});
@@ -96,7 +99,7 @@ public class HomeFragment extends Fragment {
 			};
 			
 			
-			siisIMG.setOnClickListener(new View.OnClickListener() {				
+			/*siisIMG.setOnClickListener(new View.OnClickListener() {				
 				@Override
 				public void onClick(View v) {
 					listen.onImageClicked(0);					
@@ -129,7 +132,7 @@ public class HomeFragment extends Fragment {
 				public void onClick(View v) {
 					listen.onImageClicked(4);					
 				}
-			});
+			});*/
 		return view;
 	}
 	
@@ -153,13 +156,20 @@ public class HomeFragment extends Fragment {
 					mViewFlipper.showPrevious();
 					return true;
 				}
-				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
 			return false;
 		}
+		
+		@Override
+		public boolean onSingleTapConfirmed(MotionEvent e) {
+			String temp = mViewFlipper.getCurrentView().getTag().toString();
+			listen.onImageClicked(Integer.parseInt(temp));
+			return super.onSingleTapConfirmed(e);
+		}
+				
 	}
 	
 	

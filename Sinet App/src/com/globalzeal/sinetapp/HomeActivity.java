@@ -55,7 +55,7 @@ public class HomeActivity extends Activity implements HomeFragment.OnImageSelect
 		
 	@Override
 	public void onImageClicked(int index) {
-		Toast.makeText(context, Integer.toString(index), Toast.LENGTH_SHORT).show();
+		
 		ft = getFragmentManager().beginTransaction();
 		if(index==0){
 			ft.replace(R.id.frame,siisFragment);		

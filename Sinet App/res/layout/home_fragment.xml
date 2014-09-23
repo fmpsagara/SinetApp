@@ -16,6 +16,7 @@
 
         <RelativeLayout
             android:layout_width="fill_parent"
+            android:tag="0"
             android:layout_height="fill_parent" >
 
             <ImageView
@@ -24,7 +25,8 @@
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                android:scaleType="centerCrop"                
+                android:scaleType="centerCrop"      
+                         
                 android:src="@drawable/siis" />            
             <TextView
                 style="@style/ImageTitle"
@@ -36,6 +38,7 @@
 
         <RelativeLayout
             android:layout_width="fill_parent"
+             android:tag="1"
             android:layout_height="fill_parent" >
 
             <ImageView
@@ -45,6 +48,7 @@
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
+               
                 android:src="@drawable/conf" />
 
             <TextView
@@ -56,6 +60,7 @@
 
         <RelativeLayout
             android:layout_width="fill_parent"
+            android:tag="2"
             android:layout_height="fill_parent" >
 
             <ImageView
@@ -65,6 +70,7 @@
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
+                
                 android:src="@drawable/ind" />
 
             <TextView
@@ -75,6 +81,7 @@
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="fill_parent"
+                 android:tag="3"
             android:layout_height="fill_parent" >
 
             <ImageView
@@ -84,6 +91,7 @@
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
+           
                 android:src="@drawable/prod" />
 
             <TextView
@@ -94,6 +102,7 @@
         </RelativeLayout>
          <RelativeLayout
             android:layout_width="fill_parent"
+              android:tag="4"
             android:layout_height="fill_parent" >
 
             <ImageView
@@ -103,6 +112,7 @@
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
+              
                 android:src="@drawable/bestpr" />
 
             <TextView
