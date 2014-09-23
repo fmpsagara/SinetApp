@@ -19,17 +19,19 @@
             android:layout_height="fill_parent" >
 
             <ImageView
-                android:id="@+id/lightningIMG"
+                android:id="@+id/sissIMG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"                
-                android:src="@drawable/lightning" />
-
+                android:src="@drawable/siis" />            
             <TextView
                 style="@style/ImageTitle"
-                android:text="@string/lightning" />
+                android:id="@+id/siisTXT"
+                android:layout_alignParentLeft="true"
+                 android:text="@string/siis"
+                />
         </RelativeLayout>
 
         <RelativeLayout
@@ -37,16 +39,19 @@
             android:layout_height="fill_parent" >
 
             <ImageView
+                android:id="@+id/confIMG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/color_baloons" />
+                android:src="@drawable/conf" />
 
             <TextView
                 style="@style/ImageTitle"
-                android:text="@string/color_baloons" />
+                android:id="@+id/confTXT"
+                android:layout_alignParentLeft="true"
+                android:text="@string/conf" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -54,36 +59,60 @@
             android:layout_height="fill_parent" >
 
             <ImageView
+                android:id="@+id/indusIMG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/natural_wall" />
+                android:src="@drawable/ind" />
 
             <TextView
                 style="@style/ImageTitle"
-                android:text="@string/natural_wall" />
+                android:id="@+id/indusIMG"
+                android:layout_alignParentLeft="true"
+                android:text="@string/indus" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <ImageView
+                android:id="@+id/prodIMG"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/prod" />
+
+            <TextView
+                style="@style/ImageTitle"
+                android:id="@+id/prodIMG"
+                android:layout_alignParentLeft="true"
+                android:text="@string/prod" />
+        </RelativeLayout>
+         <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <ImageView
+                android:id="@+id/bestPrIMG"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bestpr" />
+
+            <TextView
+                style="@style/ImageTitle"
+                android:id="@+id/bestPrIMG"
+                android:layout_alignParentLeft="true"
+                android:text="@string/bestpr" />
         </RelativeLayout>
     </ViewFlipper>
-<!-- 
-    <LinearLayout
-        style="@style/ButtonContainer"
-        android:orientation="horizontal" >
 
-        <Button
-            android:id="@+id/play"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:background="@android:drawable/ic_media_play" />
-
-        <Button
-            android:id="@+id/stop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/ic_media_pause" />
-    </LinearLayout> -->
 
    
 </RelativeLayout>

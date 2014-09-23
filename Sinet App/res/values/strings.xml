@@ -4,5 +4,10 @@
     <string name="lightning">Natural Lightning</string>
     <string name="color_baloons">Color Baloons</string>
     <string name="natural_wall">Natural Wall</string>
+    <string name="siis">SIIS Updates</string>
+    <string name="conf">Conferences, Trainings and Events</string>
+    <string name="indus">Industry News</string>
+    <string name="prod">Products</string>
+    <string name="bestpr">Best Practices</string>
     
 </resources>

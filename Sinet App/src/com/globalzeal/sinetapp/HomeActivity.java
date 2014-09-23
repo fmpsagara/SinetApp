@@ -21,15 +21,20 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 @SuppressLint("NewApi")
-public class HomeActivity extends Activity {
+public class HomeActivity extends Activity implements HomeFragment.OnImageSelected {
 		
+	private Context context;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);									
+		setContentView(R.layout.main);
+		context = this;
 	}
-	
-	
+		
+	@Override
+	public void onImageClicked(int index) {
+		Toast.makeText(context, Integer.toString(index), Toast.LENGTH_SHORT).show();
+	}
 }
 
 

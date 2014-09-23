@@ -4,6 +4,7 @@ package com.globalzeal.sinetapp;
 
 import com.javatechig.viewflipper.R;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -23,15 +24,32 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class HomeFragment extends Fragment {
+	public interface OnImageSelected{
+		public void onImageClicked(int index);
+	}
 	private static final int SWIPE_MIN_DISTANCE = 120;
 	private static final int SWIPE_THRESHOLD_VELOCITY = 200;
 	private ViewFlipper mViewFlipper;	
 	private AnimationListener mAnimationListener;
 	private Context mContext;
-	private ImageView lightningIMG;
+	
+	private Activity activity;
+	private OnImageSelected listen;
 	
 	@SuppressWarnings("deprecation")
 	private final GestureDetector detector = new GestureDetector(new SwipeGestureDetector());
+	
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		this.activity = activity;
+		if (activity instanceof OnImageSelected) {
+	        listen = (OnImageSelected) activity;
+	      } else {
+	        throw new ClassCastException(activity.toString()
+	            + " must implemenet HomeFragment.OnImageSelected");
+	      }
+	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,7 +60,7 @@ public class HomeFragment extends Fragment {
 		 mContext = getActivity();
 		 
 		 mViewFlipper = (ViewFlipper) view.findViewById(R.id.view_flipper);
-			lightningIMG = (ImageView) view.findViewById(R.id.lightningIMG);
+			
 			
 			mViewFlipper.setOnTouchListener(new OnTouchListener() {
 				@Override
@@ -54,12 +72,7 @@ public class HomeFragment extends Fragment {
 			});
 			
 			
-			lightningIMG.setOnClickListener(new View.OnClickListener() {			
-				@Override
-				public void onClick(View arg0) {			
-					Toast.makeText(mContext, "Lightning View",Toast.LENGTH_SHORT).show();
-				}
-			});
+			
 			
 			mViewFlipper.setAutoStart(true);
 			mViewFlipper.setFlipInterval(8000);			
@@ -110,4 +123,6 @@ public class HomeFragment extends Fragment {
 			return false;
 		}
 	}
+	
+	
 }
