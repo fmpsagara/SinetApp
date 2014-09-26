@@ -1,5 +1,6 @@
 package com.globalzeal.sinetapp;
 
+
 import com.javatechig.viewflipper.R;
 
 import android.annotation.SuppressLint;
@@ -25,7 +26,7 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 @SuppressLint("NewApi")
-public class HomeActivity extends Activity implements HomeFragment.OnImageSelected {
+public class HomeActivity extends BaseActivity implements HomeFragment.OnImageSelected {
 		
 	private Context context;
 	private FrameLayout frameContainer;
@@ -37,7 +38,6 @@ public class HomeActivity extends Activity implements HomeFragment.OnImageSelect
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		context = this;
 		
 		if(savedInstanceState==null){
 			frameContainer = (FrameLayout) findViewById(R.id.frame);
@@ -47,10 +47,8 @@ public class HomeActivity extends Activity implements HomeFragment.OnImageSelect
 			
 			ft.replace(R.id.frame,homeFragment);
 			ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);		
-			ft.commit();
-						
+			ft.commit();					
 		}
-		
 	}
 		
 	@Override
